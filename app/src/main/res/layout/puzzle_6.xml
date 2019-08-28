@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:weightSum="1"
+	android:background="#000000">
+
+
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/hint_text"
+		android:text="AUDIO 3"
+		android:gravity="center"
+		android:textSize="20sp"
+		android:textColor="#fff"
+		android:layout_marginTop="40dp"/>
+
+	<TextView
+		android:id="@+id/tvStatus"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text=""
+		android:layout_gravity="center"
+		android:layout_marginTop="@android:dimen/app_icon_size"
+		android:textStyle="bold"
+		android:textColor="#fff"
+		android:visibility="invisible"
+		android:textSize="22dp">
+	</TextView>
+
+	<ProgressBar
+		android:id="@+id/pb"
+		style="?android:attr/progressBarStyleHorizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		android:layout_marginBottom="20dp"
+		android:layout_marginTop="@android:dimen/app_icon_size">
+	</ProgressBar>
+
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="75dp"
+		android:layout_height="75dp"
+		android:onClick="onClickRecord"
+		app:cardCornerRadius="37dp"
+		app:cardBackgroundColor="#fff"
+		android:background="#fff"
+		android:id="@+id/btnRecord"
+		android:layout_gravity="center"
+		android:layout_marginTop="10dp">
+		<ImageView
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:src="@drawable/ic_fiber_manual_record_red_900_24dp"
+			android:layout_gravity="center"
+			android:foregroundGravity="center"/>
+	<!--<Button-->
+		<!--android:id="@+id/btnRecord"-->
+		<!--android:layout_width="240dp"-->
+		<!--android:layout_height="70dp"-->
+		<!--android:onClick="onClickRecord"-->
+		<!--android:text="Record"-->
+		<!--android:layout_gravity="center_horizontal"-->
+		<!--android:layout_marginTop="@android:dimen/thumbnail_height"-->
+		<!--android:shadowColor="@android:color/black"-->
+		<!--android:singleLine="false"-->
+		<!--android:textColor="#ffffffff"-->
+		<!--android:textStyle="bold"-->
+		<!--android:textSize="22dp">-->
+	<!--</Button>-->
+	</androidx.cardview.widget.CardView>
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="75dp"
+		android:layout_height="75dp"
+		android:onClick="onClickPlay"
+		app:cardCornerRadius="37dp"
+		android:id="@+id/btnPlay"
+		app:cardBackgroundColor="#fff"
+		android:background="#fff"
+		android:layout_gravity="center"
+		android:layout_margin="80dp">
+		<ImageView
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:src="@drawable/ic_loop_black_24dp"
+			android:layout_gravity="center"
+			android:foregroundGravity="center"/>
+	<!--<Button-->
+		<!--android:id="@+id/btnPlay"-->
+		<!--android:layout_width="240dp"-->
+		<!--android:layout_height="70dp"-->
+		<!--android:onClick="onClickPlay"-->
+		<!--android:text="Play"-->
+		<!--android:layout_gravity="center_horizontal"-->
+		<!--android:layout_marginTop="@android:dimen/app_icon_size"-->
+		<!--android:textSize="22dp"-->
+		<!--android:textStyle="bold"-->
+		<!--android:textColor="#ffffffff"-->
+		<!--android:shadowColor="@android:color/black">-->
+	<!--</Button>-->
+	</androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
