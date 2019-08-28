@@ -13,40 +13,60 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-		<activity android:name=".Puzzle5Activity">
-			<!--<intent-filter>-->
-				<!--<action android:name="android.intent.action.MAIN" />-->
+		<activity android:name=".HolderActivity">
 
-				<!--<category android:name="android.intent.category.LAUNCHER" />-->
-			<!--</intent-filter>-->
+
+			 <intent-filter>
+			 <action android:name="android.intent.action.MAIN" />
+
+
+			 <category android:name="android.intent.category.LAUNCHER" />
+			 </intent-filter>
+		</activity>
+		<activity android:name=".Puzzle5Activity">
+
+			<!-- <intent-filter> -->
+			<!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+			<!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+			<!-- </intent-filter> -->
 		</activity>
 		<activity android:name=".Puzzle4Activity">
-			<!--<intent-filter>-->
-				<!--<action android:name="android.intent.action.MAIN" />-->
 
-				<!--<category android:name="android.intent.category.LAUNCHER" />-->
-			<!--</intent-filter>-->
+			<!-- <intent-filter> -->
+			<!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+			<!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+			<!-- </intent-filter> -->
 		</activity>
 		<activity android:name=".Puzzle3Activity">
-			<!--<intent-filter>-->
-				<!--<action android:name="android.intent.action.MAIN" />-->
 
-				<!--<category android:name="android.intent.category.LAUNCHER" />-->
-			<!--</intent-filter>-->
+			<!-- <intent-filter> -->
+			<!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+			<!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+			<!-- </intent-filter> -->
 		</activity>
 		<activity android:name=".Puzzle2Activity">
-			<!--<intent-filter>-->
-				<!--<action android:name="android.intent.action.MAIN" />-->
 
-				<!--<category android:name="android.intent.category.LAUNCHER" />-->
-			<!--</intent-filter>-->
+			<!-- <intent-filter> -->
+			<!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+			<!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+			<!-- </intent-filter> -->
 		</activity>
 		<activity android:name=".Puzzle1Activity">
-			<!--<intent-filter>-->
-				<!--<action android:name="android.intent.action.MAIN" />-->
 
-				<!--<category android:name="android.intent.category.LAUNCHER" />-->
-			<!--</intent-filter>-->
+			<!-- <intent-filter> -->
+			<!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+			<!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+			<!-- </intent-filter> -->
 		</activity>
 		<activity android:name=".Puzzle6Activity">
 			<intent-filter>

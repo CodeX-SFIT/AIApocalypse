@@ -23,30 +23,6 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		View view = findViewById(R.id.background_layout);
-		view.setOnLongClickListener(new View.OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View v) {
-				AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-				builder.setTitle("Password");
-				final EditText password = new EditText(MainActivity.this);
-				password.setHint("Password");
-				builder.setView(password);
-				builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						if(password.getText().toString().equals("vegas")){
-							setSet();
-						}else{
-							Toast.makeText(MainActivity.this, "INCORRECT", Toast.LENGTH_SHORT).show();
-						}
-					}
-				});
-				builder.create().show();
-				return false;
-			}
-		});
-
 	}
 
 	void setSet(){
@@ -65,4 +41,6 @@ public class MainActivity extends AppCompatActivity {
 		});
 		adb.create().show();
 	}
+
+
 }

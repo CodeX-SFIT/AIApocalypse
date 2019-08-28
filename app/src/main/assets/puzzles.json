@@ -1,0 +1,83 @@
+{
+  "set": [
+    {
+      "p1": {
+        "intro": "Log 130: Codes are written so as to not be visible to human eye in light nor in darkness.",
+        "hint": "AI is a fundamental risk to the existence of human civilization"
+      },
+      "p2": {
+        "intro": "Log 200: Servers locations on map. New servers set up. This facility was the last and the main server",
+        "hint": "Core of Earth, Mars, Iron, Danger! Danger! Danger!",
+        "color": "#e40404"
+      },
+      "p6": {
+        "text": "Audio number 7"
+      }
+    },
+    {
+      "p2": {
+        "intro": "Log 200: Servers locations on map. New servers set up. This facility was the last and the main server.",
+        "hint": "Yankee, Earl, Lost Land, Omens, Water",
+        "color": "#e8f64f"
+      },
+      "p3": {
+        "intro": "Log 111: A.I took over the humans and their research on aliens. Analyzed their runes, and deciphered it.",
+        "symbolA": "Algiz.png"
+      },
+      "p4": {
+        "text": "Log 128: Dr. Bravo from India, born in November,belongs to Delta Team."
+      }
+    },
+    {
+      "p3": {
+        "intro": "Log 111: A.I took over the humans and their research on aliens. Analyzed their runes, and deciphered it.",
+        "symbolA": "Berkanan.png"
+      },
+      "p4": {
+        "text": "Log 128: Delta member from India goes to Sierra to meet member of Charlie team."
+      },
+      "p1": {
+        "intro": "Log 130: Codes are written so as to not be visible to human eye in light nor in darkness.",
+        "hint": "With Artificial Intelligence, we are summoning the demon"
+      }
+    },
+    {
+      "p4": {
+        "text": "Log 128: Mr. Victor an X-Ray specialist was a part of Alpha team, fled to an hotel in Sierra"
+      },
+      "p5": {
+        "para": "Log 141: The scientists have encountered the alien Golden sphere for the first time. They are confused which elements it consists of. They have listed down few possibilities.\n1. The most electronegative element (Fluorine)\n2. Their base planet is nearest to the sun.\n3. Scientists thought of using Nuclear bomb using Uranium to stop."
+      },
+      "p2": {
+        "intro": "Log 200: Servers locations on map. New servers set up. This facility was the last and the main server.",
+        "hint": "Trees, Chlorophyll, Emeralds, Grasshopper",
+        "color": "#139c20"
+      }
+    },
+    {
+      "p5": {
+        "para": "Log 81: The aliens used Rubidium & navigated the globe. Highly available element in the atmosphere makes them stronger. Their blood lights up in the dark & it consists of an inert gas (Neon). They spit greenish poison liquid (Chlorine)"
+      },
+      "p6": {
+        "text": "Audio number 13"
+      },
+      "p3": {
+        "intro": "Log 111: A.I took over the humans and their research on aliens. Analyzed their runes, and deciphered it.",
+        "symbolA": "Othala.png"
+      }
+    },
+    {
+      "p6": {
+        "text": "Audio number 3"
+      },
+      "p1": {
+        "intro": "Log 130: Codes are written so as to not be visible to human eye in light nor in darkness.",
+        "hint": "The development of full artificial intelligence could spell the end of the human race"
+      },
+      "p5": {
+        "para": "Log 143: Aliens skin is made up of the hardest & the most invulnerable form of element (Diamond) & they use the most combustible element as their primary weapon. They feed on the lightest inert element (Helium). An alien spaceship has been detected scientists have said that the spaceship is made up of a strange metal which also consists of an element with the highest Melting point (Tungsten)"
+      }
+    }
+    
+  ]
+}

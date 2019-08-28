@@ -16,7 +16,6 @@
 		android:id="@+id/intro_text"
 		android:layout_marginTop="40dp"
 		android:layout_alignParentStart="true"
-		android:visibility="invisible"
 		android:gravity="center_horizontal"/>
 
 
@@ -26,7 +25,6 @@
 		android:textSize="20sp"
 		android:fontFamily="@font/segoeui"
 		android:textStyle="bold"
-		android:visibility="invisible"
 		android:text="Hint textasjjd hlasdhlkasj dlkasj dlksaj dlkasd ladj"
 		android:textColor="#fff"
 		android:layout_marginBottom="40dp"

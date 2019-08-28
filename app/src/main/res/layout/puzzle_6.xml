@@ -46,7 +46,6 @@
 	<androidx.cardview.widget.CardView
 		android:layout_width="75dp"
 		android:layout_height="75dp"
-		android:onClick="onClickRecord"
 		app:cardCornerRadius="37dp"
 		app:cardBackgroundColor="#fff"
 		android:background="#fff"
@@ -78,7 +77,6 @@
 	<androidx.cardview.widget.CardView
 		android:layout_width="75dp"
 		android:layout_height="75dp"
-		android:onClick="onClickPlay"
 		app:cardCornerRadius="37dp"
 		android:id="@+id/btnPlay"
 		app:cardBackgroundColor="#fff"
