@@ -44,32 +44,34 @@ public class Puzzle1Fragment extends Fragment {
 		intro_text.setText(set.optString("intro"));
 		hint_text.setText(set.optString("hint"));
 
-
-		mediaPlayer = MediaPlayer.create(getContext(), R.raw.p1intro);
-		mediaPlayer.start();
+		if(((HolderActivity)getActivity()).isShouldPlay()) {
+			mediaPlayer = MediaPlayer.create(getContext(), R.raw.p1intro);
+			mediaPlayer.start();
 //		Integer set_no = PreferenceManager.getDefaultSharedPreferences(getContext()).getInt("SET", 0);
-		mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-			@Override
-			public void onCompletion(MediaPlayer mp) {
-				switch (set_no){
-					case 1:
-						mediaPlayer.release();
-						mediaPlayer = MediaPlayer.create(getContext(), R.raw.p1set1);
-						mediaPlayer.start();
-						break;
-					case 3:
-						mediaPlayer.release();
-						mediaPlayer = MediaPlayer.create(getContext(), R.raw.p1set3);
-						mediaPlayer.start();
-						break;
-					case 6:
-						mediaPlayer.release();
-						mediaPlayer = MediaPlayer.create(getContext(), R.raw.p1set6);
-						mediaPlayer.start();
-						break;
+			mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+				@Override
+				public void onCompletion(MediaPlayer mp) {
+					switch (set_no) {
+						case 1:
+							mediaPlayer.release();
+							mediaPlayer = MediaPlayer.create(getContext(), R.raw.p1set1);
+							mediaPlayer.start();
+							break;
+						case 3:
+							mediaPlayer.release();
+							mediaPlayer = MediaPlayer.create(getContext(), R.raw.p1set3);
+							mediaPlayer.start();
+							break;
+						case 6:
+							mediaPlayer.release();
+							mediaPlayer = MediaPlayer.create(getContext(), R.raw.p1set6);
+							mediaPlayer.start();
+							break;
+					}
 				}
-			}
-		});
+			});
+			((HolderActivity)getActivity()).played();
+		}
 
 
 

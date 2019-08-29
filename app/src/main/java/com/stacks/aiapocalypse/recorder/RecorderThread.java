@@ -61,6 +61,7 @@ public class RecorderThread extends Thread {
             myHandler.sendEmptyMessage(Puzzle6Activity.STATUS_RECORDING_END);
             TimeUnit.MILLISECONDS.sleep(1000);
             myHandler.sendEmptyMessage(Puzzle6Activity.STATUS_NONE);
+            recorder.stop();
             recorder.release();
 
         } catch (InterruptedException e) {

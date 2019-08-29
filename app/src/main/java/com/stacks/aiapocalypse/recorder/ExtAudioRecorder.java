@@ -261,7 +261,7 @@ public class ExtAudioRecorder {
                     randomAccessWriter.writeShort(Short.reverseBytes(bSamples)); // Bits per sample
                     randomAccessWriter.writeBytes("data");
                     randomAccessWriter.writeInt(0); // Data chunk size not known yet, write 0
-
+//                    randomAccessWriter.close();
                     buffer = new byte[framePeriod*bSamples/8*nChannels];
                     state = State.READY;
                 }

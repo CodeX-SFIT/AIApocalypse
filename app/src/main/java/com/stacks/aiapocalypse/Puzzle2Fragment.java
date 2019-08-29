@@ -41,8 +41,13 @@ public class Puzzle2Fragment extends Fragment {
 		hint_text.setText(set.optString("hint"));
 		hint_text.setTextColor(Color.parseColor(set.optString("color")));
 
-		mediaPlayer = MediaPlayer.create(getContext(), R.raw.p2intro);
-		mediaPlayer.start();
+		if(((HolderActivity)getActivity()).isShouldPlay()) {
+
+			mediaPlayer = MediaPlayer.create(getContext(), R.raw.p2intro);
+			mediaPlayer.start();
+			((HolderActivity)getActivity()).played();
+
+		}
 //		hint_text.setVisibility(View.GONE);
 
 //		timer = new CountDownTimer(2000, 2000) {

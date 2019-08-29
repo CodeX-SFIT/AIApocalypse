@@ -39,19 +39,23 @@ public class Puzzle5Fragment extends Fragment {
 		JSONObject set = ((HolderActivity)getActivity()).getSet().optJSONObject("p5");
 		intro_text.setText(set.optString("para"));
 
-		switch (set_no){
-			case 4:
-				mediaPlayer = MediaPlayer.create(getContext(), R.raw.p5set4);
-				mediaPlayer.start();
-				break;
-			case 5:
-				mediaPlayer = MediaPlayer.create(getContext(), R.raw.p5set5);
-				mediaPlayer.start();
-				break;
-			case 6:
-				mediaPlayer = MediaPlayer.create(getContext(), R.raw.p5set6);
-				mediaPlayer.start();
-				break;
+		if(((HolderActivity)getActivity()).isShouldPlay()) {
+
+			switch (set_no) {
+				case 4:
+					mediaPlayer = MediaPlayer.create(getContext(), R.raw.p5set4);
+					mediaPlayer.start();
+					break;
+				case 5:
+					mediaPlayer = MediaPlayer.create(getContext(), R.raw.p5set5);
+					mediaPlayer.start();
+					break;
+				case 6:
+					mediaPlayer = MediaPlayer.create(getContext(), R.raw.p5set6);
+					mediaPlayer.start();
+					break;
+			}
+			((HolderActivity)getActivity()).played();
 		}
 //		hint_text.setText(set.optString("hint"));
 

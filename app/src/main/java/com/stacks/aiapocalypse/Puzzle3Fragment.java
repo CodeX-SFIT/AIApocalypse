@@ -45,9 +45,12 @@ public class Puzzle3Fragment extends Fragment {
 				.load(Uri.parse("file:///android_asset/" + set.optString("symbolA")))
 				.into(imageView);
 
-		mediaPlayer = MediaPlayer.create(getContext(), R.raw.p3intro);
-		mediaPlayer.start();
+		if(((HolderActivity)getActivity()).isShouldPlay()) {
 
+			mediaPlayer = MediaPlayer.create(getContext(), R.raw.p3intro);
+			mediaPlayer.start();
+			((HolderActivity)getActivity()).played();
+		}
 //
 //		hint_text.setVisibility(View.GONE);
 //

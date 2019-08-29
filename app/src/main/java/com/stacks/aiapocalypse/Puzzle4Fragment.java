@@ -39,20 +39,23 @@ public class Puzzle4Fragment extends Fragment {
 		JSONObject set = ((HolderActivity)getActivity()).getSet().optJSONObject("p4");
 		intro_text.setText(set.optString("text"));
 
+		if(((HolderActivity)getActivity()).isShouldPlay()) {
 
-		switch (set_no){
-			case 2:
-				mediaPlayer = MediaPlayer.create(getContext(), R.raw.p4set2);
-				mediaPlayer.start();
-				break;
-			case 3:
-				mediaPlayer = MediaPlayer.create(getContext(), R.raw.p4set3);
-				mediaPlayer.start();
-				break;
-			case 4:
-				mediaPlayer = MediaPlayer.create(getContext(), R.raw.p4set4);
-				mediaPlayer.start();
-				break;
+			switch (set_no) {
+				case 2:
+					mediaPlayer = MediaPlayer.create(getContext(), R.raw.p4set2);
+					mediaPlayer.start();
+					break;
+				case 3:
+					mediaPlayer = MediaPlayer.create(getContext(), R.raw.p4set3);
+					mediaPlayer.start();
+					break;
+				case 4:
+					mediaPlayer = MediaPlayer.create(getContext(), R.raw.p4set4);
+					mediaPlayer.start();
+					break;
+			}
+			((HolderActivity)getActivity()).played();
 		}
 //		hint_text.setText(set.optString("hint"));
 

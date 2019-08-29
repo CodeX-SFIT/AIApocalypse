@@ -43,6 +43,9 @@ public class HolderActivity extends AppCompatActivity {
 
 	public static int set_no = -1;
 
+	private boolean[] played = new boolean[]{false, false, false};
+	private boolean shouldPlay = true;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -99,36 +102,38 @@ public class HolderActivity extends AppCompatActivity {
 				loadFragment();
 			}
 		});
-
-		right.setOnLongClickListener(new View.OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View v) {
-				if(current != 0) return false;
-				AlertDialog.Builder builder = new AlertDialog.Builder(HolderActivity.this);
-				builder.setTitle("Password");
-				final EditText password = new EditText(HolderActivity.this);
-				password.setHint("For developers only");
-				builder.setView(password);
-				builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						if(password.getText().toString().equals("vegas")){
-							setSet();
-						}else{
-							Toast.makeText(HolderActivity.this, "INCORRECT", Toast.LENGTH_SHORT).show();
-						}
-					}
-				});
-				builder.create().show();
-				return false;
-			}
-		});
+//
+//		right.setOnLongClickListener(new View.OnLongClickListener() {
+//			@Override
+//			public boolean onLongClick(View v) {
+//				if(current != 0) return false;
+//				AlertDialog.Builder builder = new AlertDialog.Builder(HolderActivity.this);
+//				builder.setTitle("Password");
+//				final EditText password = new EditText(HolderActivity.this);
+//				password.setHint("For developers only");
+//				builder.setView(password);
+//				builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
+//					@Override
+//					public void onClick(DialogInterface dialog, int which) {
+//						if(password.getText().toString().equals("vegas")){
+//							setSet();
+//						}else{
+//							Toast.makeText(HolderActivity.this, "INCORRECT", Toast.LENGTH_SHORT).show();
+//						}
+//					}
+//				});
+//				builder.create().show();
+//				return false;
+//			}
+//		});
 		current=0;
 		loadFragment();
 	}
 
 	void loadFragment() {
 //		getSupportActionBar().setTitle(fraglist[(int) current]);
+
+		shouldPlay = !played[(int) current];
 
 		Fragment fragment = getSelectedFragment();
 		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -196,25 +201,6 @@ public class HolderActivity extends AppCompatActivity {
 		return set;
 	}
 
-	void setSet(){
-		AlertDialog.Builder adb = new AlertDialog.Builder(HolderActivity.this);
-		final Spinner spinner = new Spinner(HolderActivity.this);
-		spinner.setAdapter(new ArrayAdapter<String>(HolderActivity.this, android.R.layout.simple_spinner_dropdown_item,
-				new String[]{"1", "2", "3", "4", "5", "6"}));
-		adb.setView(spinner);
-		adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				Log.d("Set changed", "onClick: " + spinner.getSelectedItem());
-				SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(HolderActivity.this);
-				sp.edit().putInt("SET", Integer.parseInt((String)spinner.getSelectedItem())).apply();
-				Intent intent = getIntent();
-				finish();
-				startActivity(intent);
-			}
-		});
-		adb.create().show();
-	}
 
 	private void hideSystemUI() {
 		// Enables regular immersive mode.
@@ -235,4 +221,15 @@ public class HolderActivity extends AppCompatActivity {
 		);
 	}
 
+	public boolean isShouldPlay() {
+		return shouldPlay;
+	}
+	public void played(){
+		played[(int) current] = true;
+	}
+
+	@Override
+	public void onBackPressed() {
+//		super.onBackPressed();
+	}
 }
