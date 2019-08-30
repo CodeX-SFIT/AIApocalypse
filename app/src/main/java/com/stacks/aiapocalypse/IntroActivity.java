@@ -20,13 +20,21 @@ public class IntroActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_intro);
 
 		TextView intro = findViewById(R.id.intro_text);
-		Button begin = findViewById(R.id.begin);
+		final Button begin = findViewById(R.id.begin);
 //
 //		intro.setCharacterDelay(150);
 //		intro.animateText(getString(R.string.intro_text));
 
-//		MediaPlayer player = MediaPlayer.create(this, R.raw.introduction);
-//		player.start();
+		begin.setVisibility(View.GONE);
+		MediaPlayer player = MediaPlayer.create(this, R.raw.introduction);
+//		player.set;
+		player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			@Override
+			public void onCompletion(MediaPlayer mp) {
+				begin.setVisibility(View.VISIBLE);
+			}
+		});
+		player.start();
 
 		begin.setOnClickListener(new View.OnClickListener() {
 			@Override
