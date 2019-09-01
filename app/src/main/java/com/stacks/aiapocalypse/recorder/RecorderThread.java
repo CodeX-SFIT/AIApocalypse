@@ -5,7 +5,8 @@ import android.media.MediaRecorder;
 import android.os.Handler;
 import android.os.Message;
 
-import com.stacks.aiapocalypse.Puzzle6Activity;
+import com.stacks.aiapocalypse.Puzzle6Fragment;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -55,12 +56,12 @@ public class RecorderThread extends Thread {
             // information about recording - progressBar and TextView
             for (int i = 0; i < 11; i++) {
                 TimeUnit.SECONDS.sleep(1);
-                msg = myHandler.obtainMessage(Puzzle6Activity.STATUS_RECORDING, 10, i);
+                msg = myHandler.obtainMessage(Puzzle6Fragment.STATUS_RECORDING, 10, i);
                 myHandler.sendMessage(msg);
             }
-            myHandler.sendEmptyMessage(Puzzle6Activity.STATUS_RECORDING_END);
+            myHandler.sendEmptyMessage(Puzzle6Fragment.STATUS_RECORDING_END);
             TimeUnit.MILLISECONDS.sleep(1000);
-            myHandler.sendEmptyMessage(Puzzle6Activity.STATUS_NONE);
+            myHandler.sendEmptyMessage(Puzzle6Fragment.STATUS_NONE);
             recorder.stop();
             recorder.release();
 

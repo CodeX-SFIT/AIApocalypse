@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class IntroActivity extends AppCompatActivity {
-
+	MediaPlayer player;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,20 +25,23 @@ public class IntroActivity extends AppCompatActivity {
 //		intro.setCharacterDelay(150);
 //		intro.animateText(getString(R.string.intro_text));
 
-		begin.setVisibility(View.GONE);
-		MediaPlayer player = MediaPlayer.create(this, R.raw.introduction);
+//		begin.setVisibility(View.GONE);
+		player = MediaPlayer.create(this, R.raw.introduction);
 //		player.set;
-		player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-			@Override
-			public void onCompletion(MediaPlayer mp) {
-				begin.setVisibility(View.VISIBLE);
-			}
-		});
+//		player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+//			@Override
+//			public void onCompletion(MediaPlayer mp) {
+//				begin.setVisibility(View.VISIBLE);
+//			}
+//		});
 		player.start();
 
 		begin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				player.stop();
+				player.release();
+				player = null;
 				Intent intent = new Intent(IntroActivity.this, HolderActivity.class);
 				startActivity(intent);
 				finish();
@@ -51,4 +54,6 @@ public class IntroActivity extends AppCompatActivity {
 	public void onBackPressed() {
 //		super.onBackPressed();
 	}
+
+
 }

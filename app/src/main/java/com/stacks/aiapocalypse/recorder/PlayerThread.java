@@ -1,11 +1,15 @@
 package com.stacks.aiapocalypse.recorder;
 
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 
-import com.stacks.aiapocalypse.Puzzle6Activity;
+import com.stacks.aiapocalypse.Puzzle5Fragment;
+import com.stacks.aiapocalypse.Puzzle6Fragment;
+import com.stacks.aiapocalypse.Puzzle6Fragment;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
@@ -70,26 +74,29 @@ public class PlayerThread extends Thread {
 
 
                 mediaPlayer = new MediaPlayer();
-                mediaPlayer.setDataSource(revFileName);
-                mediaPlayer.prepare();
+//                mediaPlayer.setDataSource(revFileName);
+            FileInputStream fis = new FileInputStream(revFileName);
+            mediaPlayer.setDataSource(fis.getFD());
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
+            mediaPlayer.prepare();
                 mediaPlayer.start();
 
                 // information about playing - progressBar and TextView
                 for (int i = 0; i < 11; i++) {
                     TimeUnit.SECONDS.sleep(1);
-                    msg = myHandler.obtainMessage(Puzzle6Activity.STATUS_PLAYING, 10, i);
+                    msg = myHandler.obtainMessage(Puzzle6Fragment.STATUS_PLAYING, 10, i);
                     myHandler.sendMessage(msg);
                 }
-                myHandler.sendEmptyMessage(Puzzle6Activity.STATUS_PLAYING_END);
+                myHandler.sendEmptyMessage(Puzzle6Fragment.STATUS_PLAYING_END);
                 TimeUnit.MILLISECONDS.sleep(1000);
-                myHandler.sendEmptyMessage(Puzzle6Activity.STATUS_NONE);
+                myHandler.sendEmptyMessage(Puzzle6Fragment.STATUS_NONE);
                 releasePlayer();
 
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+            myHandler.sendEmptyMessage(Puzzle6Fragment.TOAST_ERROR);
         }
 
     }
@@ -139,7 +146,7 @@ public class PlayerThread extends Thread {
 
 
         } catch (IOException ioe) {
-            myHandler.sendEmptyMessage(Puzzle6Activity.STATUS_NONE_PLAY);
+            myHandler.sendEmptyMessage(Puzzle6Fragment.STATUS_NONE_PLAY);
         }
     }
 

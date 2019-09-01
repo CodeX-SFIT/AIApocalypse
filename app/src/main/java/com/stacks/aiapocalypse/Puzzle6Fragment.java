@@ -123,6 +123,7 @@ public class Puzzle6Fragment extends Fragment {
 	 * when application has not file to playing
 	 */
 	public static final int STATUS_NONE_PLAY = 5;
+	public static final int TOAST_ERROR =6;
 
 
 	/**
@@ -191,10 +192,14 @@ public class Puzzle6Fragment extends Fragment {
 					break;
 				case STATUS_PLAYING_END:
 					tvStatus.setText("Playing complete!");
+					playerThread.playStop();
 					break;
 				case STATUS_NONE_PLAY:
 					Toast.makeText(getActivity(), "File doesn't exist", Toast.LENGTH_SHORT).show();
 					break;
+				case TOAST_ERROR:
+					Toast.makeText(getActivity(), "Error occured while replaying audio. Please use minimize this app and use ReverseTalk App", Toast.LENGTH_LONG).show();
+
 			}
 		}
 
